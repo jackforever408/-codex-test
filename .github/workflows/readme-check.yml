@@ -1,0 +1,12 @@
+name: README Check
+
+on:
+  pull_request:
+
+jobs:
+  check-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check project description
+        run: grep -q '^## 项目说明' README.md
